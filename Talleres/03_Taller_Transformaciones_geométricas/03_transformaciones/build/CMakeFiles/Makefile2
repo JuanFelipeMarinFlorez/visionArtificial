@@ -63,16 +63,17 @@ RM = /usr/local/Cellar/cmake/3.19.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity"
+CMAKE_SOURCE_DIR = "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build"
+CMAKE_BINARY_DIR = "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build"
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/pr4_geometric_transformations_ocv.dir/all
+all: CMakeFiles/Geometric_transformation_ocv.dir/all
+all: CMakeFiles/Transformation_ocv.dir/all
 
 .PHONY : all
 
@@ -82,36 +83,64 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/pr4_geometric_transformations_ocv.dir/clean
+clean: CMakeFiles/Geometric_transformation_ocv.dir/clean
+clean: CMakeFiles/Transformation_ocv.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/pr4_geometric_transformations_ocv.dir
+# Target rules for target CMakeFiles/Geometric_transformation_ocv.dir
 
 # All Build rule for target.
-CMakeFiles/pr4_geometric_transformations_ocv.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pr4_geometric_transformations_ocv.dir/build.make CMakeFiles/pr4_geometric_transformations_ocv.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pr4_geometric_transformations_ocv.dir/build.make CMakeFiles/pr4_geometric_transformations_ocv.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build/CMakeFiles" --progress-num=1,2 "Built target pr4_geometric_transformations_ocv"
-.PHONY : CMakeFiles/pr4_geometric_transformations_ocv.dir/all
+CMakeFiles/Geometric_transformation_ocv.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Geometric_transformation_ocv.dir/build.make CMakeFiles/Geometric_transformation_ocv.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Geometric_transformation_ocv.dir/build.make CMakeFiles/Geometric_transformation_ocv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles" --progress-num=1,2 "Built target Geometric_transformation_ocv"
+.PHONY : CMakeFiles/Geometric_transformation_ocv.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/pr4_geometric_transformations_ocv.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build/CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/pr4_geometric_transformations_ocv.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build/CMakeFiles" 0
-.PHONY : CMakeFiles/pr4_geometric_transformations_ocv.dir/rule
+CMakeFiles/Geometric_transformation_ocv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Geometric_transformation_ocv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles" 0
+.PHONY : CMakeFiles/Geometric_transformation_ocv.dir/rule
 
 # Convenience name for target.
-pr4_geometric_transformations_ocv: CMakeFiles/pr4_geometric_transformations_ocv.dir/rule
+Geometric_transformation_ocv: CMakeFiles/Geometric_transformation_ocv.dir/rule
 
-.PHONY : pr4_geometric_transformations_ocv
+.PHONY : Geometric_transformation_ocv
 
 # clean rule for target.
-CMakeFiles/pr4_geometric_transformations_ocv.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pr4_geometric_transformations_ocv.dir/build.make CMakeFiles/pr4_geometric_transformations_ocv.dir/clean
-.PHONY : CMakeFiles/pr4_geometric_transformations_ocv.dir/clean
+CMakeFiles/Geometric_transformation_ocv.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Geometric_transformation_ocv.dir/build.make CMakeFiles/Geometric_transformation_ocv.dir/clean
+.PHONY : CMakeFiles/Geometric_transformation_ocv.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Transformation_ocv.dir
+
+# All Build rule for target.
+CMakeFiles/Transformation_ocv.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformation_ocv.dir/build.make CMakeFiles/Transformation_ocv.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformation_ocv.dir/build.make CMakeFiles/Transformation_ocv.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles" --progress-num=3,4 "Built target Transformation_ocv"
+.PHONY : CMakeFiles/Transformation_ocv.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Transformation_ocv.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles" 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Transformation_ocv.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles" 0
+.PHONY : CMakeFiles/Transformation_ocv.dir/rule
+
+# Convenience name for target.
+Transformation_ocv: CMakeFiles/Transformation_ocv.dir/rule
+
+.PHONY : Transformation_ocv
+
+# clean rule for target.
+CMakeFiles/Transformation_ocv.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformation_ocv.dir/build.make CMakeFiles/Transformation_ocv.dir/clean
+.PHONY : CMakeFiles/Transformation_ocv.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

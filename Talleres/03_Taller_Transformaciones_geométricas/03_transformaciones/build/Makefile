@@ -67,10 +67,10 @@ RM = /usr/local/Cellar/cmake/3.19.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity"
+CMAKE_SOURCE_DIR = "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build"
+CMAKE_BINARY_DIR = "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build/CMakeFiles" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles" "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -130,17 +130,57 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named pr4_geometric_transformations_ocv
+# Target rules for targets named Geometric_transformation_ocv
 
 # Build rule for target.
-pr4_geometric_transformations_ocv: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pr4_geometric_transformations_ocv
-.PHONY : pr4_geometric_transformations_ocv
+Geometric_transformation_ocv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Geometric_transformation_ocv
+.PHONY : Geometric_transformation_ocv
 
 # fast build rule for target.
-pr4_geometric_transformations_ocv/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pr4_geometric_transformations_ocv.dir/build.make CMakeFiles/pr4_geometric_transformations_ocv.dir/build
-.PHONY : pr4_geometric_transformations_ocv/fast
+Geometric_transformation_ocv/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Geometric_transformation_ocv.dir/build.make CMakeFiles/Geometric_transformation_ocv.dir/build
+.PHONY : Geometric_transformation_ocv/fast
+
+#=============================================================================
+# Target rules for targets named Transformation_ocv
+
+# Build rule for target.
+Transformation_ocv: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Transformation_ocv
+.PHONY : Transformation_ocv
+
+# fast build rule for target.
+Transformation_ocv/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformation_ocv.dir/build.make CMakeFiles/Transformation_ocv.dir/build
+.PHONY : Transformation_ocv/fast
+
+04_Transformation_ocv.o: 04_Transformation_ocv.cxx.o
+
+.PHONY : 04_Transformation_ocv.o
+
+# target to build an object file
+04_Transformation_ocv.cxx.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformation_ocv.dir/build.make CMakeFiles/Transformation_ocv.dir/04_Transformation_ocv.cxx.o
+.PHONY : 04_Transformation_ocv.cxx.o
+
+04_Transformation_ocv.i: 04_Transformation_ocv.cxx.i
+
+.PHONY : 04_Transformation_ocv.i
+
+# target to preprocess a source file
+04_Transformation_ocv.cxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformation_ocv.dir/build.make CMakeFiles/Transformation_ocv.dir/04_Transformation_ocv.cxx.i
+.PHONY : 04_Transformation_ocv.cxx.i
+
+04_Transformation_ocv.s: 04_Transformation_ocv.cxx.s
+
+.PHONY : 04_Transformation_ocv.s
+
+# target to generate assembly for a file
+04_Transformation_ocv.cxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Transformation_ocv.dir/build.make CMakeFiles/Transformation_ocv.dir/04_Transformation_ocv.cxx.s
+.PHONY : 04_Transformation_ocv.cxx.s
 
 04_geometric_transformations_ocv.o: 04_geometric_transformations_ocv.cxx.o
 
@@ -148,7 +188,7 @@ pr4_geometric_transformations_ocv/fast:
 
 # target to build an object file
 04_geometric_transformations_ocv.cxx.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pr4_geometric_transformations_ocv.dir/build.make CMakeFiles/pr4_geometric_transformations_ocv.dir/04_geometric_transformations_ocv.cxx.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Geometric_transformation_ocv.dir/build.make CMakeFiles/Geometric_transformation_ocv.dir/04_geometric_transformations_ocv.cxx.o
 .PHONY : 04_geometric_transformations_ocv.cxx.o
 
 04_geometric_transformations_ocv.i: 04_geometric_transformations_ocv.cxx.i
@@ -157,7 +197,7 @@ pr4_geometric_transformations_ocv/fast:
 
 # target to preprocess a source file
 04_geometric_transformations_ocv.cxx.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pr4_geometric_transformations_ocv.dir/build.make CMakeFiles/pr4_geometric_transformations_ocv.dir/04_geometric_transformations_ocv.cxx.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Geometric_transformation_ocv.dir/build.make CMakeFiles/Geometric_transformation_ocv.dir/04_geometric_transformations_ocv.cxx.i
 .PHONY : 04_geometric_transformations_ocv.cxx.i
 
 04_geometric_transformations_ocv.s: 04_geometric_transformations_ocv.cxx.s
@@ -166,7 +206,7 @@ pr4_geometric_transformations_ocv/fast:
 
 # target to generate assembly for a file
 04_geometric_transformations_ocv.cxx.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pr4_geometric_transformations_ocv.dir/build.make CMakeFiles/pr4_geometric_transformations_ocv.dir/04_geometric_transformations_ocv.cxx.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Geometric_transformation_ocv.dir/build.make CMakeFiles/Geometric_transformation_ocv.dir/04_geometric_transformations_ocv.cxx.s
 .PHONY : 04_geometric_transformations_ocv.cxx.s
 
 # Help Target
@@ -177,7 +217,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... pr4_geometric_transformations_ocv"
+	@echo "... Geometric_transformation_ocv"
+	@echo "... Transformation_ocv"
+	@echo "... 04_Transformation_ocv.o"
+	@echo "... 04_Transformation_ocv.i"
+	@echo "... 04_Transformation_ocv.s"
 	@echo "... 04_geometric_transformations_ocv.o"
 	@echo "... 04_geometric_transformations_ocv.i"
 	@echo "... 04_geometric_transformations_ocv.s"

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/04_geometric_transformations_ocv.cxx" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/03_Taller_Transformaciones_geométricas/03_rescale_intensity/build/CMakeFiles/pr4_geometric_transformations_ocv.dir/04_geometric_transformations_ocv.cxx.o"
+  "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/04_Transformation_ocv.cxx" "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/03_Taller_Transformaciones_geométricas/03_transformaciones/build/CMakeFiles/Transformation_ocv.dir/04_Transformation_ocv.cxx.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

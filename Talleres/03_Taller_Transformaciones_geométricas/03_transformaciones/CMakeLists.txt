@@ -43,4 +43,6 @@ MARK_AS_ADVANCED(
 ADD_EXECUTABLE( Transformation_ocv 04_Transformation_ocv.cxx )
 TARGET_LINK_LIBRARIES( Transformation_ocv ${OpenCV_LIBS} )
 
+ADD_EXECUTABLE( Geometric_transformation_ocv 04_geometric_transformations_ocv.cxx )
+TARGET_LINK_LIBRARIES( Geometric_transformation_ocv ${OpenCV_LIBS} )
 

@@ -34,39 +34,36 @@ int main(int argc, char** argv )
    
    }// fi
 
-   cv::Mat t(2,3,CV_64F, Scalar(0.0));
+    // rotar 
+    Mat r(2,3,CV_64F, Scalar(0.0));
+    r.at<double>(0,0) = -cos(35); 
+    r.at<double>(0,1) = -sin (35);
+    r.at<double>(1,0) = sin (35);
+    r.at<double>(1,1) = -cos (35);
 
-   //translate 
-   /*
+    //trasladar
+    Mat t(2,3,CV_64F, Scalar(0.0));
     t.at<double>(0,0) = 1;      
     t.at<double>(0,2) = -42;   
     t.at<double>(1,1) = 1; 
-     t.at<double>(1,2) = -37; 
-   */
-     // girar 
-    t.at<double>(0,0) = sin(35);    
-    t.at<double>(0,1) = cos(35);   
-    t.at<double>(0,2) = 0;   
-    t.at<double>(1,0) = -cos(35); 
-    t.at<double>(1,1) = sin(35); 
-     t.at<double>(1,2) = 0;
-    /*
-    t.at<double>(0,0) = 0.65532;    
-    t.at<double>(0,1) = -0.45886;   
-    t.at<double>(0,2) = -44.50126;   
-    t.at<double>(1,0) = 0.45886; 
-    t.at<double>(1,1) = 0.65532; 
-     t.at<double>(1,2) = 4.97472; 
-     */
+    t.at<double>(1,2) = -37;
+
+    //Escalar
+    Mat s(2,3,CV_64F, Scalar(0.0));
+    s.at<double>(0,0) = 0.8; 
+    s.at<double>(1,1) = 0.8;
+    
 
     Mat dest;
     Size size(image.cols,image.rows);
-    warpAffine(image, dest, t, size, INTER_LINEAR, BORDER_CONSTANT);
+    warpAffine(image, dest, s, size, INTER_LINEAR, BORDER_CONSTANT);
+    warpAffine(dest, dest, r, size, INTER_LINEAR, BORDER_CONSTANT);
+    warpAffine(dest, dest, t, size, INTER_LINEAR, BORDER_CONSTANT);
 
     //imshow("outputImage", dest);
-   std::stringstream ss( argv[ 1 ] );
-   std::string basename;
-   getline( ss, basename, '.' );
+    std::stringstream ss( argv[ 1 ] );
+    std::string basename;
+    getline( ss, basename, '.' );
 
    //channels 
   
@@ -82,4 +79,3 @@ Mat resizer(Mat image, float newSize){
   resize(image, res_img, Size(), newSize, newSize, INTER_LINEAR);
   return res_img;
 }
-

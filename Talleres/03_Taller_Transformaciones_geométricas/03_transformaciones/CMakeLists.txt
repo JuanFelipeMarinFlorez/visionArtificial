@@ -40,6 +40,7 @@ MARK_AS_ADVANCED(
 ## = Programs to compile =
 ## =======================
 
+ADD_EXECUTABLE( Transformation_ocv 04_Transformation_ocv.cxx )
+TARGET_LINK_LIBRARIES( Transformation_ocv ${OpenCV_LIBS} )
 
-ADD_EXECUTABLE( pr4_geometric_transformations_ocv 04_geometric_transformations_ocv.cxx )
-TARGET_LINK_LIBRARIES( pr4_geometric_transformations_ocv ${OpenCV_LIBS} )
+

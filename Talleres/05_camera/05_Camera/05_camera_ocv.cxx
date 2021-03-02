@@ -54,7 +54,32 @@ int main(int argc, char** argv )
    warpPerspective(image,dst, salida,size,INTER_LINEAR);
 
 // Camera
-//double calibrateCamera(InputArrayOfArrays dst_p, InputArrayOfArrays src_p, Size size, InputOutputArray cameraMatrix, InputOutputArray distCoeffs, OutputArrayOfArrays rvecs, OutputArrayOfArrays tvecs);
+    int numSquares = (src_p[0] - src_p[1]) * (dst_p[0] - dst_p[1]);
+    Size board_sz = Size(numCornersHor, numCornersVer);
+    VideoCapture capture = VideoCapture(0);
+    vector<vector<Point3f>> object_points;
+    vector<vector<Point2f>> image_points;
+    Mat intrinsic = Mat(3, 3, CV_32FC1);
+    Mat distCoeffs;
+    vector<Mat> rvecs;
+    vector<Mat> tvecs;
+    intrinsic.ptr<float>(0)[0] = 1;
+    intrinsic.ptr<float>(1)[1] = 1;
+
+    calibrateCamera(dst_p, src_p, image.size(), intrinsic, distCoeffs, rvecs, tvecs);
+
+    Mat imageUndistorted;
+    while(1)
+    {
+        capture >> image;
+        undistort(image, imageUndistorted, intrinsic, distCoeffs);
+
+        imshow("win1", image);
+        imshow("win2", imageUndistorted);
+        waitKey(1);
+    }
+
+    capture.release();
 
 
 

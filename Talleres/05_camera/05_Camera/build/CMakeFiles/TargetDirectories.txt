@@ -1,4 +1,0 @@
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles/rebuild_cache.dir
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles/edit_cache.dir
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles/pr5_camera_itk.dir
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles/pr5_camera_ocv.dir

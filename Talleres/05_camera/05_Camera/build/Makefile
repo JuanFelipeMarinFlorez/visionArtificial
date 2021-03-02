@@ -67,10 +67,10 @@ RM = /usr/local/Cellar/cmake/3.19.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/05_camara/05_Camera"
+CMAKE_SOURCE_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/05_camara/05_Camera/build"
+CMAKE_BINARY_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/05_camara/05_Camera/build/CMakeFiles" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/05_camara/05_Camera/build//CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build//CMakeFiles/progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/05_camara/05_Camera/build/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target

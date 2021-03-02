@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = -DITK_IO_FACTORY_REGISTER_MANAGER -DNDEBUG
 
-CXX_INCLUDES = -I"/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/05_camara/05_Camera/build/ITKFactoryRegistration" -isystem /usr/local/include/ITK-5.1 -isystem /usr/local/include/ITK-5.1/Utilities -isystem /usr/local/include
+CXX_INCLUDES = -I"/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/ITKFactoryRegistration" -isystem /usr/local/include/ITK-5.1 -isystem /usr/local/include/ITK-5.1/Utilities -isystem /usr/local/include
 
 CXX_FLAGS =  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk -std=gnu++11
 

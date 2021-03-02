@@ -4,11 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-<<<<<<< Updated upstream
-  "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_itk.cxx" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles/pr5_camera_itk.dir/05_camera_itk.cxx.o"
-=======
   "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_itk.cxx" "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles/pr5_camera_itk.dir/05_camera_itk.cxx.o"
->>>>>>> Stashed changes
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

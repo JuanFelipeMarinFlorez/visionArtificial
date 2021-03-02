@@ -54,17 +54,8 @@ int main(int argc, char** argv )
    warpPerspective(image,dst, salida,size,INTER_LINEAR);
 
 // Camera
-destroyAllWindows();
+//double calibrateCamera(InputArrayOfArrays dst_p, InputArrayOfArrays src_p, Size size, InputOutputArray cameraMatrix, InputOutputArray distCoeffs, OutputArrayOfArrays rvecs, OutputArrayOfArrays tvecs);
 
-Point2f ret, mtx, dist, rvecs, tvecs = calibrateCamera(dst_p, src_p, gray.shape[::-1], None, None);
-Point2f h,  w = image.shape[:2];
-newcameramtx, roi = getOptimalNewCameraMatrix(mtx, dist, (w,h), 1, (w,h));
-
-//undistort
-dst = undistort(img, mtx, dist, None, newcameramtx);
-//crop the image
-x, y, w, h = roi;
-dst = dst[y:y+h, x:x+w];
 
 
 

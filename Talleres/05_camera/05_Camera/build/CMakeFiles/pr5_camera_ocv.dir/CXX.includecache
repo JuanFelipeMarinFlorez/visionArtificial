@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/Talleres/05_camara/05_Camera/05_camera_ocv.cxx
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_ocv.cxx
 stdio.h
 -
 opencv2/opencv.hpp

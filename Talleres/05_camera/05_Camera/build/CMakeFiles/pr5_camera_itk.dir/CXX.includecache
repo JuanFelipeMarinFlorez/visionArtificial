@@ -6,18 +6,17 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< Updated upstream
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_itk.cxx
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_itk.cxx
 itkImageFileReader.h
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/itkImageFileReader.h
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/itkImageFileReader.h
 itkImageFileWriter.h
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/itkImageFileWriter.h
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/itkImageFileWriter.h
 itkAffineTransform.h
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/itkAffineTransform.h
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/itkAffineTransform.h
 itkResampleImageFilter.h
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/itkResampleImageFilter.h
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/itkResampleImageFilter.h
 itkWindowedSincInterpolateImageFunction.h
-/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/itkWindowedSincInterpolateImageFunction.h
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/itkWindowedSincInterpolateImageFunction.h
 
 /usr/local/include/ITK-5.1/ITKCommonExport.h
 
@@ -1760,9 +1759,6 @@ unistd.h
 -
 stdarg.h
 -
-=======
-/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_itk.cxx
->>>>>>> Stashed changes
 stdio.h
 -
 

@@ -6,6 +6,7 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< Updated upstream
 /Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_itk.cxx
 itkImageFileReader.h
 /Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/itkImageFileReader.h
@@ -1759,6 +1760,9 @@ unistd.h
 -
 stdarg.h
 -
+=======
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_itk.cxx
+>>>>>>> Stashed changes
 stdio.h
 -
 

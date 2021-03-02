@@ -62,10 +62,17 @@ RM = /usr/local/Cellar/cmake/3.19.4/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< Updated upstream
 CMAKE_SOURCE_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera"
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build"
+=======
+CMAKE_SOURCE_DIR = "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera"
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build"
+>>>>>>> Stashed changes
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pr5_camera_ocv.dir/depend.make
@@ -78,6 +85,7 @@ include CMakeFiles/pr5_camera_ocv.dir/flags.make
 
 CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.o: CMakeFiles/pr5_camera_ocv.dir/flags.make
 CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.o: ../05_camera_ocv.cxx
+<<<<<<< Updated upstream
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.o -c "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_ocv.cxx"
 
@@ -88,6 +96,18 @@ CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.i: cmake_force
 CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_ocv.cxx" -o CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.o -c "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_ocv.cxx"
+
+CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_ocv.cxx" > CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.i
+
+CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_ocv.cxx" -o CMakeFiles/pr5_camera_ocv.dir/05_camera_ocv.cxx.s
+>>>>>>> Stashed changes
 
 # Object files for target pr5_camera_ocv
 pr5_camera_ocv_OBJECTS = \
@@ -114,7 +134,11 @@ pr5_camera_ocv: /usr/local/lib/libopencv_flann.4.5.1.dylib
 pr5_camera_ocv: /usr/local/lib/libopencv_imgproc.4.5.1.dylib
 pr5_camera_ocv: /usr/local/lib/libopencv_core.4.5.1.dylib
 pr5_camera_ocv: CMakeFiles/pr5_camera_ocv.dir/link.txt
+<<<<<<< Updated upstream
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable pr5_camera_ocv"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable pr5_camera_ocv"
+>>>>>>> Stashed changes
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pr5_camera_ocv.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -127,6 +151,10 @@ CMakeFiles/pr5_camera_ocv.dir/clean:
 .PHONY : CMakeFiles/pr5_camera_ocv.dir/clean
 
 CMakeFiles/pr5_camera_ocv.dir/depend:
+<<<<<<< Updated upstream
 	cd "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build" "/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles/pr5_camera_ocv.dir/DependInfo.cmake" --color=$(COLOR)
+=======
+	cd "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera" "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera" "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build" "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build" "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build/CMakeFiles/pr5_camera_ocv.dir/DependInfo.cmake" --color=$(COLOR)
+>>>>>>> Stashed changes
 .PHONY : CMakeFiles/pr5_camera_ocv.dir/depend
 

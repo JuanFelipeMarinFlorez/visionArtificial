@@ -53,10 +53,26 @@ int main(int argc, char** argv )
    Mat dst;
    warpPerspective(image,dst, salida,size,INTER_LINEAR);
 
+// Camera
+destroyAllWindows();
+
+Point2f ret, mtx, dist, rvecs, tvecs = calibrateCamera(dst_p, src_p, gray.shape[::-1], None, None);
+Point2f h,  w = image.shape[:2];
+newcameramtx, roi = getOptimalNewCameraMatrix(mtx, dist, (w,h), 1, (w,h));
+
+//undistort
+dst = undistort(img, mtx, dist, None, newcameramtx);
+//crop the image
+x, y, w, h = roi;
+dst = dst[y:y+h, x:x+w];
+
+
+
   std::stringstream ss( argv[ 1 ] );
   std::string basename;
   getline( ss, basename, '.' );
   imwrite( basename + "_camera.png", dst );
+  imwrite( basename + 'calibresult.png', dst);
    
    return(0);
 }

@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
+#include <vector>
 
 using namespace cv;
-
+using namespace std;
 
 int main(int argc, char** argv )
 {
@@ -53,8 +54,10 @@ int main(int argc, char** argv )
    Mat dst;
    warpPerspective(image,dst, salida,size,INTER_LINEAR);
 
-// Camera
-    int numSquares = (src_p[0] - src_p[1]) * (dst_p[0] - dst_p[1]);
+/*Camera
+    float numCornersHor =  2230;
+    float numCornersVer = 1248;
+    int numSquares = numCornersHor * numCornersVer;
     Size board_sz = Size(numCornersHor, numCornersVer);
     VideoCapture capture = VideoCapture(0);
     vector<vector<Point3f>> object_points;
@@ -66,8 +69,8 @@ int main(int argc, char** argv )
     intrinsic.ptr<float>(0)[0] = 1;
     intrinsic.ptr<float>(1)[1] = 1;
 
-    calibrateCamera(dst_p, src_p, image.size(), intrinsic, distCoeffs, rvecs, tvecs);
-
+    cv:: calibrateCamera(dst_p, src_p, image.size(), intrinsic, distCoeffs, rvecs, tvecs);
+*/
     Mat imageUndistorted;
     while(1)
     {

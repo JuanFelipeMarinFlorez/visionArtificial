@@ -45,5 +45,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< Updated upstream:Talleres/05_camera/05_Camera/muild/cmake_install.cmake
 file(WRITE "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/muild/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> Stashed changes:Talleres/05_camera/05_Camera/build/cmake_install.cmake
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

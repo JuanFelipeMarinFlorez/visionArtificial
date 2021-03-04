@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< Updated upstream:Talleres/06_filtrado/build/CMakeFiles/06_filtrado.dir/CXX.includecache
 /Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/06_filtrado/06_filtrado.cxx
+=======
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/05_camera_ocv.cxx
+>>>>>>> Stashed changes:Talleres/05_camera/05_Camera/build/CMakeFiles/pr5_camera_ocv.dir/CXX.includecache
 stdio.h
 -
 opencv2/opencv.hpp

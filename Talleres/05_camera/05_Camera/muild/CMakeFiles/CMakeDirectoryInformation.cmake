@@ -3,7 +3,11 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera")
+<<<<<<< Updated upstream:Talleres/05_camera/05_Camera/muild/CMakeFiles/CMakeDirectoryInformation.cmake
 set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/muild")
+=======
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/05_camera/05_Camera/build")
+>>>>>>> Stashed changes:Talleres/05_camera/05_Camera/build/CMakeFiles/CMakeDirectoryInformation.cmake
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

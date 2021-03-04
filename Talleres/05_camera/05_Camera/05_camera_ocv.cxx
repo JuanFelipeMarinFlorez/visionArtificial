@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
-#include <vector>
 
 using namespace cv;
-using namespace std;
+
 
 int main(int argc, char** argv )
 {
@@ -48,12 +47,6 @@ int main(int argc, char** argv )
     dst_p[2] = cv::Point2f(  162,  1909);
     dst_p[3] = cv::Point2f(2397, 1876);
 
-
-  Mat salida;
-   salida= getPerspectiveTransform(dst_p,src_p);
-   Mat dst;
-   warpPerspective(image,dst, salida,size,INTER_LINEAR);
-
 /*Camera
     float numCornersHor =  2230;
     float numCornersVer = 1248;
@@ -71,29 +64,18 @@ int main(int argc, char** argv )
 
     cv:: calibrateCamera(dst_p, src_p, image.size(), intrinsic, distCoeffs, rvecs, tvecs);
 */
-    Mat imageUndistorted;
-    while(1)
-    {
-        capture >> image;
-        undistort(image, imageUndistorted, intrinsic, distCoeffs);
-
-        imshow("win1", image);
-        imshow("win2", imageUndistorted);
-        waitKey(1);
-    }
-
-    capture.release();
 
 
-
+  Mat salida;
+   salida= getPerspectiveTransform(dst_p,src_p);
+   Mat dst;
+   warpPerspective(image,dst, salida,size,INTER_LINEAR);
 
   std::stringstream ss( argv[ 1 ] );
   std::string basename;
   getline( ss, basename, '.' );
   imwrite( basename + "_camera.png", dst );
-  imwrite( basename + 'calibresult.png', dst);
    
    return(0);
 }
-
 

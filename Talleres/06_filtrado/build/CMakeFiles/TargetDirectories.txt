@@ -1,0 +1,3 @@
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/06_filtrado/build/CMakeFiles/rebuild_cache.dir
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/06_filtrado/build/CMakeFiles/edit_cache.dir
+/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/06_filtrado/build/CMakeFiles/06_filtrado.dir

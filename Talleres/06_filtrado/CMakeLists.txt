@@ -39,3 +39,5 @@ MARK_AS_ADVANCED(
 
 ADD_EXECUTABLE( 06_filtrado 06_filtrado.cxx )
 TARGET_LINK_LIBRARIES( 06_filtrado ${OpenCV_LIBS} )
+ADD_EXECUTABLE( 06_noise_delete 06_noise_delete.cxx )
+TARGET_LINK_LIBRARIES( 06_noise_delete ${OpenCV_LIBS} )

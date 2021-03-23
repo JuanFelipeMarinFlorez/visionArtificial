@@ -1,0 +1,4 @@
+/home/marlon_linares16/Documentos/VA/Repository/visionArtificial/Talleres/06_filtrado/build/CMakeFiles/rebuild_cache.dir
+/home/marlon_linares16/Documentos/VA/Repository/visionArtificial/Talleres/06_filtrado/build/CMakeFiles/edit_cache.dir
+/home/marlon_linares16/Documentos/VA/Repository/visionArtificial/Talleres/06_filtrado/build/CMakeFiles/06_filtrado.dir
+/home/marlon_linares16/Documentos/VA/Repository/visionArtificial/Talleres/06_filtrado/build/CMakeFiles/06_noise_delete.dir

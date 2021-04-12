@@ -4,17 +4,13 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 ## = Project name =
 ## ================
 
-PROJECT( Intensities_ITK_OCV )
+PROJECT( Intensities_OCV )
 
 ## ============
 ## = Packages =
 ## ============
 
 FIND_PACKAGE( OpenCV REQUIRED )
-FIND_PACKAGE(ITK REQUIRED)
-IF(ITK_FOUND)
-  INCLUDE(${ITK_USE_FILE})
-ENDIF(ITK_FOUND)
 
 ## ================================================
 ## = Do not allow to build inside the source tree =
@@ -40,9 +36,6 @@ MARK_AS_ADVANCED(
 ## = Programs to compile =
 ## =======================
 
-ADD_EXECUTABLE( Transformation_ocv 04_Transformation_ocv.cxx )
-TARGET_LINK_LIBRARIES( Transformation_ocv ${OpenCV_LIBS} )
 
-ADD_EXECUTABLE( Geometric_transformation_ocv 04_geometric_transformations_ocv.cxx )
-TARGET_LINK_LIBRARIES( Geometric_transformation_ocv ${OpenCV_LIBS} )
-
+ADD_EXECUTABLE( Umbrarizacion Umbrarizacion.cxx )
+TARGET_LINK_LIBRARIES( Umbrarizacion ${OpenCV_LIBS} )

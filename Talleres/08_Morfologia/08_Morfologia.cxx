@@ -6,7 +6,7 @@ using namespace cv;
 
 Mat MorphGradient(Mat img);
 Mat TopHat(Mat img);
-Mat BottonHat(Mat img);
+Mat BottomHat(Mat img);
 int erosion_size = 3;
 int dilation_size = 3;
 Mat element_erotion = getStructuringElement(MORPH_RECT,
@@ -44,8 +44,8 @@ int main(int argc, char **argv)
   //Define Element Matrix for
 
   image_gradient = MorphGradient(image);
-  image_topHat = MorphGradient(image);
-  image_bottomHat = MorphGradient(image);
+  image_topHat = TopHat(image);
+  image_bottomHat = BottomHat(image);
 
   std::stringstream ss(argv[1]);
   std::string basename;
@@ -55,13 +55,35 @@ int main(int argc, char **argv)
   imwrite(basename + "BottomHat.png", image_bottomHat);
 }
 
-Mat MorphGradient(Mat img)
-{
+Mat MorphGradient(Mat img){
+  Mat dilatada;
+  dilate(img,dilatada,element_dilation);
+  Mat erosionada;
+  erode(img,erosionada,element_erotion);
+
+  Mat resultado = dilatada - erosionada;
+  return resultado;
+
 }
 Mat TopHat(Mat img)
 {
+  Mat dilatada;
+  Mat erosionada;
+  erode(img,erosionada,element_erotion);
+  dilate(erosionada,dilatada,element_dilation);
+  return (img - dilatada);
+
+
 }
 
 Mat BottomHat(Mat img)
 {
+  Mat dilatada;
+  Mat erosionada;
+   dilate(img,dilatada,element_dilation);
+  erode(dilatada,erosionada,element_erotion);
+
+  return (erosionada - img);
+
+
 }

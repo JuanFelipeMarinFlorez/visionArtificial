@@ -16,6 +16,80 @@ Mat element_dilation = getStructuringElement(MORPH_RECT,
                                     Size(2 * dilation_size + 1, 2 * dilation_size + 1),
                                     Point(dilation_size, dilation_size));
 
+Mat MorphGradient(Mat img)
+{
+  Mat dilation_dst, erosion_dst;
+
+  //Dilation de la img
+  dilate( img, dilation_dst, element_dilation );
+
+
+  //Erosion de la img
+  erode( img, erosion_dst, element_dilation );
+
+  return MRest(dilation_dst, erosion_dst);
+}
+Mat TopHat(Mat img)
+{
+  Mat erosion_dst, res;
+  //Erosion de la img
+  erode( img, erosion_dst, element_dilation );
+
+  //Dilation de la img
+  dilate( erosion_dst, res, element_dilation );
+
+  return res;
+
+}
+
+Mat BottomHat(Mat img)
+{
+}
+
+Mat MAddition (Mat a, Mat b){
+  Mat res;
+  int xa = a.size(); /* size of y */
+  int ya = a[0].size(); /* size of x */
+
+  int xb = b.size(); /* size of y */
+  int yb = b[0].size(); /* size of x */
+  if ((xa == xb) && (ya == yb))
+  {
+    for(int i = 0; i < xa; i++)
+    {
+      for (int j = 0; j < ya; j++)
+      {
+        res[i][j] = a[i][j] + b[i][j];
+      }
+    } 
+    return res;
+  }
+  else return 0;
+  
+} 
+
+Mat MRest (Mat a, Mat b){
+  Mat res;
+  int xa = a.size(); /* size of y */
+  int ya = a[0].size(); /* size of x */
+
+  int xb = b.size(); /* size of y */
+  int yb = b[0].size(); /* size of x */
+  if ((xa == xb) && (ya == yb))
+  {
+    for(int i = 0; i < xa; i++)
+    {
+      for (int j = 0; j < ya; j++)
+      {
+        res[i][j] = a[i][j] - b[i][j];
+      }
+    } 
+    return res;
+  }
+  else return 0;
+  
+} 
+
 int main(int argc, char **argv)
 {
   // argumentos por linea de comandos
@@ -43,7 +117,7 @@ int main(int argc, char **argv)
 
   //Define Element Matrix for
 
-  image_gradient = MorphGradient(image);
+  image_gradient = MorphGradient(img;
   image_topHat = MorphGradient(image);
   image_bottomHat = MorphGradient(image);
 
@@ -55,13 +129,4 @@ int main(int argc, char **argv)
   imwrite(basename + "BottomHat.png", image_bottomHat);
 }
 
-Mat MorphGradient(Mat img)
-{
-}
-Mat TopHat(Mat img)
-{
-}
 
-Mat BottomHat(Mat img)
-{
-}

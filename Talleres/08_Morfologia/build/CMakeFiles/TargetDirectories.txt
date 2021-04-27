@@ -1,0 +1,3 @@
+/home/marlon_linares16/Documentos/VA/Repository/visionArtificial/Talleres/08_Morfologia/build/CMakeFiles/rebuild_cache.dir
+/home/marlon_linares16/Documentos/VA/Repository/visionArtificial/Talleres/08_Morfologia/build/CMakeFiles/08_Morfologia.dir
+/home/marlon_linares16/Documentos/VA/Repository/visionArtificial/Talleres/08_Morfologia/build/CMakeFiles/edit_cache.dir

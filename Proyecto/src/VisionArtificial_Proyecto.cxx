@@ -72,6 +72,13 @@ int main(int argc, char **argv)
 
   Mat kernel(2, 3, CV_32F, KernelData3);
 
+
+
+  std::stringstream ss(argv[1]);
+  std::string basename;
+  getline(ss, basename, '.');
+  imwrite(basename + "_binary.png", dst3);
+
   //warpAffine(dst2, dst3, kernel, image.size(), BORDER_CONSTANT, 0);
   int x, y, minx, miny, maxx, maxy;
   MatIterator_<Vec3b> it, end;
@@ -149,13 +156,8 @@ int main(int argc, char **argv)
     }
   }
 
-  std::stringstream ss(argv[1]);
-  std::string basename;
-  getline(ss, basename, '.');
 
   //channels
-
-  imwrite(basename + "_binary.png", white);
 
   return 0;
 }

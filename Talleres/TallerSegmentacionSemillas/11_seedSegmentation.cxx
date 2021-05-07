@@ -87,7 +87,9 @@ int main(int argc, char const *argv[])
 
     //----------------------------------------------------------------------
     // Llamado a funcion de segmentar:
-    Mat prueba = segmentacion(image, 400, 245);
+    Mat prueba = segmentacion(image, 293, 263);
+
+    imwrite("solucion.png",prueba);
 }
 
 Mat segmentacion(Mat image, int seedX, int seedY)
@@ -100,28 +102,180 @@ Mat segmentacion(Mat image, int seedX, int seedY)
     colaPixeles.push(Point(seedX, seedY));
     image_segmentated.at<Vec3b>(seedY, seedX)[0] = 255;
     do
-    {
-        Point punto_actual = colaPixeles.pop();
+    {   
+       
+        Point punto_actual = colaPixeles.front();
+        colaPixeles.pop();
         int prom = -1;
+        int acum=0;
+        int promedio=0;
+        int rango=9;
         int lista_intensidades[8];
-        if (punto_actual.x > 0 && punto_actual.y > 0)
+        if (punto_actual.x -1 > 0 && punto_actual.y -1 > 0 && 
+            punto_actual.x -1 < grayImage.rows && punto_actual.y -1 < grayImage.cols)
         {
-            /* code */
+            lista_intensidades[0] = grayImage.at<Vec3b>(punto_actual.y - 1, punto_actual.x - 1)[0];
+            acum++;
         }
-        if ((punto_actual.x < grayImage.rows && punto_actual.y < grayImage.cols))
+        if (punto_actual.x -1 > 0 && punto_actual.y  > 0 && 
+            punto_actual.x -1 < grayImage.rows && punto_actual.y < grayImage.cols)
         {
-            /* code */
+            lista_intensidades[acum] = grayImage.at<Vec3b>(punto_actual.y , punto_actual.x - 1)[0];
+            acum++;
         }
 
-        lista_intensidades[0] = image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x - 1)[0];
-        lista_intensidades[1] = image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x)[0];
-        lista_intensidades[2] = image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x)[0];
-        lista_intensidades[3] = image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x)[0];
-        lista_intensidades[4] = image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x)[0];
-        lista_intensidades[5] = image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x)[0];
-        lista_intensidades[6] = image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x)[0];
-        lista_intensidades[7] = image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x)[0];
-    } while (colaPixeles.empty());
+        if (punto_actual.x -1 > 0 && punto_actual.y +1 > 0 && 
+            punto_actual.x -1 < grayImage.rows && punto_actual.y +1< grayImage.cols)
+        {
+            lista_intensidades[acum] = grayImage.at<Vec3b>(punto_actual.y +1, punto_actual.x - 1)[0];
+            acum++;
+        }
+        if (punto_actual.x  > 0 && punto_actual.y -1  > 0 && 
+            punto_actual.x  < grayImage.rows && punto_actual.y -1 < grayImage.cols)
+        {
+            lista_intensidades[acum] = grayImage.at<Vec3b>(punto_actual.y -1, punto_actual.x )[0];
+            acum++;
+        }
+        if (punto_actual.x > 0 && punto_actual.y +1 > 0 && 
+            punto_actual.x  < grayImage.rows && punto_actual.y +1< grayImage.cols)
+        {
+            lista_intensidades[acum] = grayImage.at<Vec3b>(punto_actual.y +1, punto_actual.x )[0];
+            acum++;
+        }
+        if (punto_actual.x +1 > 0 && punto_actual.y -1 > 0 && 
+            punto_actual.x +1 < grayImage.rows && punto_actual.y -1< grayImage.cols)
+        {
+            lista_intensidades[acum] = grayImage.at<Vec3b>(punto_actual.y -1, punto_actual.x +1)[0];
+            acum++;
+        }
+        if (punto_actual.x +1 > 0 && punto_actual.y  > 0 && 
+            punto_actual.x +1 < grayImage.rows && punto_actual.y < grayImage.cols)
+        {
+            lista_intensidades[acum] = grayImage.at<Vec3b>(punto_actual.y , punto_actual.x +1)[0];
+            acum++;
+        }
+        if (punto_actual.x +1 > 0 && punto_actual.y +1 > 0 && 
+            punto_actual.x +1 < grayImage.rows && punto_actual.y +1 < grayImage.cols)
+        {
+            lista_intensidades[acum] = grayImage.at<Vec3b>(punto_actual.y +1, punto_actual.x +1)[0];
+            acum++;
+        }
+
+        for(int i=0; i<acum; i++){
+           promedio+=lista_intensidades[i]; 
+        }
+        promedio/=acum;
+
+
+        if (punto_actual.x -1 > 0 && punto_actual.y -1 > 0 && 
+            punto_actual.x -1 < grayImage.rows && punto_actual.y -1 < grayImage.cols)
+        {
+
+            if( std::abs(grayImage.at<Vec3b>(punto_actual.y - 1, punto_actual.x - 1)[0] - promedio) < rango  ){
+                if(image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x - 1)[0]!= 255){
+                    image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x - 1)[0]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x - 1)[1]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x - 1)[2]= 255;
+                    colaPixeles.push(Point( punto_actual.x - 1,punto_actual.y - 1 ));
+                }
+                
+            }
+        }
+        if (punto_actual.x -1 > 0 && punto_actual.y  > 0 && 
+            punto_actual.x -1 < grayImage.rows && punto_actual.y < grayImage.cols)
+        {
+            if( std::abs(grayImage.at<Vec3b>(punto_actual.y , punto_actual.x - 1)[0] - promedio) < rango  ){
+                if(image_segmentated.at<Vec3b>(punto_actual.y , punto_actual.x - 1)[0]!= 255){
+                    image_segmentated.at<Vec3b>(punto_actual.y , punto_actual.x - 1)[0]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y , punto_actual.x - 1)[1]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y , punto_actual.x - 1)[2]= 255;
+                    colaPixeles.push(Point( punto_actual.x - 1,punto_actual.y  ));
+                }
+                
+            }
+        }
+
+        if (punto_actual.x -1 > 0 && punto_actual.y +1 > 0 && 
+            punto_actual.x -1 < grayImage.rows && punto_actual.y +1< grayImage.cols)
+        {
+            if( std::abs(grayImage.at<Vec3b>(punto_actual.y + 1, punto_actual.x - 1)[0] - promedio) < rango  ){
+                if(image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x - 1)[0]!= 255){
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x - 1)[0]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x - 1)[1]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x - 1)[2]= 255;
+                    colaPixeles.push(Point( punto_actual.x - 1,punto_actual.y + 1 ));
+                }
+                
+            }
+        }
+        if (punto_actual.x  > 0 && punto_actual.y -1  > 0 && 
+            punto_actual.x  < grayImage.rows && punto_actual.y -1 < grayImage.cols)
+        {
+           if( std::abs(grayImage.at<Vec3b>(punto_actual.y - 1, punto_actual.x )[0] - promedio) < rango ){
+                if(image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x )[0]!= 255){
+                    image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x )[0]= 255;
+                     image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x )[1]= 255;
+                      image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x )[2]= 255;
+                    colaPixeles.push(Point( punto_actual.x ,punto_actual.y - 1 ));
+                }
+                    
+            }
+        }
+        if (punto_actual.x > 0 && punto_actual.y +1 > 0 && 
+            punto_actual.x  < grayImage.rows && punto_actual.y +1< grayImage.cols)
+        {
+            if( std::abs(grayImage.at<Vec3b>(punto_actual.y + 1, punto_actual.x )[0] - promedio) <rango  ){
+                if(image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x )[0]!= 255){
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x )[0]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x )[1]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x )[2]= 255;
+                    colaPixeles.push(Point( punto_actual.x ,punto_actual.y + 1 ));
+                }
+            }
+        }
+        if (punto_actual.x +1 > 0 && punto_actual.y -1 > 0 && 
+            punto_actual.x +1 < grayImage.rows && punto_actual.y -1< grayImage.cols)
+        {
+            if( std::abs(grayImage.at<Vec3b>(punto_actual.y - 1, punto_actual.x + 1)[0] - promedio) <rango  ){
+                if(image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x + 1)[0]!= 255){
+                    image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x + 1)[0]= 255;
+                     image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x + 1)[1]= 255;
+                      image_segmentated.at<Vec3b>(punto_actual.y - 1, punto_actual.x + 1)[2]= 255;
+                    colaPixeles.push(Point( punto_actual.x + 1,punto_actual.y - 1 ));
+                }
+
+                
+            }
+        }
+        if (punto_actual.x +1 > 0 && punto_actual.y  > 0 && 
+            punto_actual.x +1 < grayImage.rows && punto_actual.y < grayImage.cols)
+        {
+            if( std::abs(grayImage.at<Vec3b>(punto_actual.y , punto_actual.x + 1)[0] - promedio) < rango  ){
+                if(image_segmentated.at<Vec3b>(punto_actual.y , punto_actual.x + 1)[0]!= 255){
+                    image_segmentated.at<Vec3b>(punto_actual.y , punto_actual.x + 1)[0]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y , punto_actual.x + 1)[1]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y , punto_actual.x + 1)[2]= 255;
+                    colaPixeles.push(Point( punto_actual.x + 1,punto_actual.y  ));
+                }
+            }
+        }
+        if (punto_actual.x +1 > 0 && punto_actual.y +1 > 0 && 
+            punto_actual.x +1 < grayImage.rows && punto_actual.y +1 < grayImage.cols)
+        {
+            if( std::abs(grayImage.at<Vec3b>(punto_actual.y + 1, punto_actual.x + 1)[0] - promedio) < rango ){
+                if(image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x + 1)[0]!= 255){
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x + 1)[0]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x + 1)[1]= 255;
+                    image_segmentated.at<Vec3b>(punto_actual.y + 1, punto_actual.x + 1)[2]= 255;
+                    colaPixeles.push(Point( punto_actual.x + 1,punto_actual.y + 1 ));
+                }
+                
+            }
+        }
+        
+
+        
+    } while ( !colaPixeles.empty());
 
     return image_segmentated;
 }

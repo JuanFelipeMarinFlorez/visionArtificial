@@ -1,0 +1,3 @@
+/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/TallerSegmentacionSemillas/build/CMakeFiles/rebuild_cache.dir
+/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/TallerSegmentacionSemillas/build/CMakeFiles/edit_cache.dir
+/Users/juanfelipemarinflorez/Desktop/Pontificia Universidad Javeriana/Semestres/Noveno/visión/visionArtificial/Talleres/TallerSegmentacionSemillas/build/CMakeFiles/11_seedSegmentation.dir

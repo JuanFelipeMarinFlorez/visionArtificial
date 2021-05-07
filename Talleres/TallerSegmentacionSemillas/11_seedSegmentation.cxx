@@ -88,7 +88,6 @@ int main(int argc, char const *argv[])
     //----------------------------------------------------------------------
     // Llamado a funcion de segmentar:
     Mat prueba = segmentacion(image, 293, 263);
-
     imwrite("solucion.png",prueba);
 }
 
@@ -109,7 +108,7 @@ Mat segmentacion(Mat image, int seedX, int seedY)
         int prom = -1;
         int acum=0;
         int promedio=0;
-        int rango=9;
+        int rango=8;
         int lista_intensidades[8];
         if (punto_actual.x -1 > 0 && punto_actual.y -1 > 0 && 
             punto_actual.x -1 < grayImage.rows && punto_actual.y -1 < grayImage.cols)
@@ -277,5 +276,7 @@ Mat segmentacion(Mat image, int seedX, int seedY)
         
     } while ( !colaPixeles.empty());
 
-    return image_segmentated;
+    Mat final = image_segmentated - grayImage;
+
+    return final;
 }

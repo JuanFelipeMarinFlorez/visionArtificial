@@ -1,3 +1,0 @@
-/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/TallerSegmentacionSemillas/build/CMakeFiles/rebuild_cache.dir
-/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/TallerSegmentacionSemillas/build/CMakeFiles/edit_cache.dir
-/Users/paulavalentinasanchezpena/Desktop/OneDrive - Pontificia Universidad Javeriana/Semestres/9/Visión/visionArtificial/Talleres/TallerSegmentacionSemillas/build/CMakeFiles/11_seedSegmentation.dir

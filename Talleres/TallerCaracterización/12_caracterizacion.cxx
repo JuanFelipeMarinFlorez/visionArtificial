@@ -12,6 +12,7 @@ Mat centros(Mat img, Mat img2);
 int main(int argc, char const *argv[])
 {
     Mat image, etiqueta, histograma, distancias, resultado;
+   
     int histSize = 256;
 
     image = imread(argv[1], 1);
@@ -22,14 +23,30 @@ int main(int argc, char const *argv[])
     }
     etiqueta = componentes(image);
 
-    imwrite("resultado.png", etiqueta);
+    Mat resultadobn = Mat::zeros(etiqueta.rows, etiqueta.cols, CV_8UC1);
 
-    distanceTransform(etiqueta,distancias, DIST_L1,3);
-    imwrite("resultado2.png", distancias);
+    imwrite("Regiones_individuales_etiquetadas.png", etiqueta);
 
+    distanceTransform(etiqueta,distancias, DIST_L2,3);
+
+    normalize(distancias, distancias, 0, 255, NORM_MINMAX);
+
+    imwrite("Mapa_distancias.png", distancias);
+    
     resultado= centros(etiqueta,distancias);
 
-    imwrite("resultado3.png", resultado);
+    for (int i = 0; i< etiqueta.rows; i++ )
+    {
+        for (int j = 0; j < etiqueta.cols; j++)
+        {
+            if (etiqueta.at<uchar>(i, j) != 0)
+            {
+                resultadobn.at<uchar>(i, j) = 255;
+            }
+        }
+    }
+
+    imwrite("Regiones_filtradasxtamano.png", resultadobn);
 
 
     return 0;
@@ -169,7 +186,7 @@ Mat componentes(Mat Img)
     {
         for (int  j = 0; j < graymax_X; j++)
         {
-            if(etiquetas.at<uchar>(i, j)!= 0 && etiquetas.at<uchar>(i, j) == 0){
+            if(etiquetas.at<uchar>(i, j)!= 0 ){
 
                 for (int k=0 ;k<numEtiqueta; k++ ){
                     if(histograma.at<float>(0, k) < umbral && etiquetas.at<uchar>(i, j)==k ){
@@ -204,6 +221,7 @@ Mat centros(Mat img, Mat img2){
 
     int graymax_X = img.cols;
     int graymax_Y = img.rows;
+    Mat imgaux = Mat::zeros(graymax_Y, graymax_X, CV_8UC1);
     std::queue<Point> colaPixeles;
     std::queue<Point> colaPixeles2;
     int numetiquetas=0;
@@ -214,13 +232,18 @@ Mat centros(Mat img, Mat img2){
         {
             if (img.at<uchar>(i, j) !=0 && img.at<uchar>(i, j)>numetiquetas)
             {
-                std::cout<<Point(j, i)<<std::endl;
+                //std::cout<<Point(j, i)<<std::endl;
                 int maximo=0;
                 colaPixeles.push(Point(j, i));
                 colaPixeles2.push(Point(j, i));
+
                 do
                 {
+                    
                     Point punto_actual = colaPixeles.front();
+                    
+                    imgaux.at<uchar>(punto_actual.y, punto_actual.x) = 255;
+
                     colaPixeles.pop();
                     if(img2.at<uchar>(punto_actual.y, punto_actual.x) >maximo){
                        maximo=img2.at<uchar>(punto_actual.y, punto_actual.x) ; 
@@ -230,21 +253,25 @@ Mat centros(Mat img, Mat img2){
                         punto_actual.x - 1 < graymax_X && punto_actual.y - 1 < graymax_Y)
                     {
                         if (img.at<uchar>(punto_actual.y - 1, punto_actual.x - 1) != 0 &&
-                         img.at<uchar>(punto_actual.y - 1, punto_actual.x - 1)>numetiquetas)
+                         img.at<uchar>(punto_actual.y - 1, punto_actual.x - 1)>numetiquetas &&
+                         imgaux.at<uchar>(punto_actual.x - 1, punto_actual.y - 1) != 255)
                         {
                             colaPixeles.push(Point(punto_actual.x - 1, punto_actual.y - 1));
                             colaPixeles2.push(Point(punto_actual.x - 1, punto_actual.y - 1));
+                            imgaux.at<uchar>(punto_actual.x - 1, punto_actual.y - 1) = 255;
                         }
                     }
                     if (punto_actual.x - 1 >= 0 && punto_actual.y >= 0 &&
                         punto_actual.x - 1 < graymax_X && punto_actual.y < graymax_Y)
                     {
                         if (img.at<uchar>(punto_actual.y, punto_actual.x - 1) != 0 &&
-                         img.at<uchar>(punto_actual.y , punto_actual.x - 1)>numetiquetas)
+                         img.at<uchar>(punto_actual.y , punto_actual.x - 1)>numetiquetas &&
+                         imgaux.at<uchar>(punto_actual.x - 1, punto_actual.y) != 255)
                         {
 
                             colaPixeles.push(Point(punto_actual.x - 1, punto_actual.y));
                             colaPixeles2.push(Point(punto_actual.x - 1, punto_actual.y));
+                            imgaux.at<uchar>(punto_actual.x - 1, punto_actual.y) = 255;
                         }
                     }
 
@@ -252,60 +279,72 @@ Mat centros(Mat img, Mat img2){
                         punto_actual.x - 1 < graymax_X && punto_actual.y + 1 < graymax_Y)
                     {
                         if (img.at<uchar>(punto_actual.y + 1, punto_actual.x - 1) != 0 &&
-                         img.at<uchar>(punto_actual.y + 1, punto_actual.x - 1)>numetiquetas )
+                         img.at<uchar>(punto_actual.y + 1, punto_actual.x - 1)>numetiquetas &&
+                          imgaux.at<uchar>(punto_actual.x - 1, punto_actual.y + 1) != 255)
                         {
                             colaPixeles.push(Point(punto_actual.x - 1, punto_actual.y + 1));
                             colaPixeles2.push(Point(punto_actual.x - 1, punto_actual.y + 1));
+                            imgaux.at<uchar>(punto_actual.x - 1, punto_actual.y + 1) = 255;
                         }
                     }
                     if (punto_actual.x >= 0 && punto_actual.y - 1 >= 0 &&
                         punto_actual.x < graymax_X && punto_actual.y - 1 < graymax_Y)
                     {
                         if (img.at<uchar>(punto_actual.y - 1, punto_actual.x) != 0  &&
-                         img.at<uchar>(punto_actual.y - 1, punto_actual.x )>numetiquetas)
+                         img.at<uchar>(punto_actual.y - 1, punto_actual.x )>numetiquetas &&
+                         imgaux.at<uchar>(punto_actual.x, punto_actual.y - 1) != 255)
                         {
                             colaPixeles.push(Point(punto_actual.x, punto_actual.y - 1));
                             colaPixeles2.push(Point(punto_actual.x, punto_actual.y - 1));
+                            imgaux.at<uchar>(punto_actual.x, punto_actual.y - 1) = 255;
                         }
                     }
                     if (punto_actual.x >= 0 && punto_actual.y + 1 >= 0 &&
                         punto_actual.x < graymax_X && punto_actual.y + 1 < graymax_Y)
                     {
                         if (img.at<uchar>(punto_actual.y + 1, punto_actual.x) != 0 &&
-                         img.at<uchar>(punto_actual.y +1, punto_actual.x )>numetiquetas)
+                         img.at<uchar>(punto_actual.y +1, punto_actual.x )>numetiquetas &&
+                         imgaux.at<uchar>(punto_actual.x, punto_actual.y + 1) != 255)
                         {
                             colaPixeles.push(Point(punto_actual.x, punto_actual.y + 1));
                             colaPixeles2.push(Point(punto_actual.x, punto_actual.y + 1));
+                            imgaux.at<uchar>(punto_actual.x, punto_actual.y + 1) = 255;
                         }
                     }
                     if (punto_actual.x + 1 >= 0 && punto_actual.y - 1 >= 0 &&
                         punto_actual.x + 1 < graymax_X && punto_actual.y - 1 < graymax_Y)
                     {
                         if (img.at<uchar>(punto_actual.y - 1, punto_actual.x + 1) != 0 &&
-                         img.at<uchar>(punto_actual.y - 1, punto_actual.x + 1)>numetiquetas)
+                         img.at<uchar>(punto_actual.y - 1, punto_actual.x + 1)>numetiquetas &&
+                         imgaux.at<uchar>(punto_actual.x, punto_actual.y + 1) != 255)
                         {
                             colaPixeles.push(Point(punto_actual.x + 1, punto_actual.y - 1));
                             colaPixeles2.push(Point(punto_actual.x + 1, punto_actual.y - 1));
+                            imgaux.at<uchar>(punto_actual.x + 1, punto_actual.y - 1) = 255;
                         }
                     }
                     if (punto_actual.x + 1 >= 0 && punto_actual.y >= 0 &&
                         punto_actual.x + 1 < graymax_X && punto_actual.y < graymax_Y)
                     {
                         if (img.at<uchar>(punto_actual.y, punto_actual.x + 1) != 0 &&
-                         img.at<uchar>(punto_actual.y , punto_actual.x + 1)>numetiquetas)
+                         img.at<uchar>(punto_actual.y , punto_actual.x + 1)>numetiquetas &&
+                         imgaux.at<uchar>(punto_actual.x, punto_actual.y + 1) != 255)
                         {
                             colaPixeles.push(Point(punto_actual.x + 1, punto_actual.y));
                             colaPixeles2.push(Point(punto_actual.x + 1, punto_actual.y));
+                            imgaux.at<uchar>(punto_actual.x + 1, punto_actual.y) = 255;
                         }
                     }
                     if (punto_actual.x + 1 >= 0 && punto_actual.y + 1 >= 0 &&
                         punto_actual.x + 1 < graymax_X && punto_actual.y + 1 < graymax_Y)
                     {
                         if (img.at<uchar>(punto_actual.y + 1, punto_actual.x + 1) != 0 &&
-                         img.at<uchar>(punto_actual.y + 1, punto_actual.x + 1) >numetiquetas)
+                         img.at<uchar>(punto_actual.y + 1, punto_actual.x + 1) >numetiquetas &&
+                         imgaux.at<uchar>(punto_actual.x, punto_actual.y + 1) != 255)
                         {
                             colaPixeles.push(Point(punto_actual.x + 1, punto_actual.y + 1));
                             colaPixeles2.push(Point(punto_actual.x + 1, punto_actual.y + 1));
+                            imgaux.at<uchar>(punto_actual.x + 1, punto_actual.y + 1) = 255;
                         }
                     }
                 } while (!colaPixeles.empty());
@@ -351,7 +390,7 @@ Mat centros(Mat img, Mat img2){
 
                 }
 
-                img2.at<uchar>(centro.y,centro.x)= 255;
+                img2.at<uchar>(centro.y,centro.x)= 0;
                 std::cout<<"centro región "<<cont<<centro<<std::endl;
 
                 

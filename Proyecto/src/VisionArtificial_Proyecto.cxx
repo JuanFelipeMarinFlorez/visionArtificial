@@ -570,5 +570,6 @@ int main(int argc, char **argv)
   case 3:
     std::cout << "El objeto dentro de la imagen es posiblemente una caja de Tetrapack" << std::endl;
     break;
+    
   }
 }
